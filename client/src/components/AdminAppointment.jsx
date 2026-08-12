@@ -11,7 +11,7 @@ function AdminAppointment() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "http://localhost:8000/api/admin/getallAppointmentsAdmin",
+        "https://medicare-uz8a.onrender.com/api/admin/getallAppointmentsAdmin",
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -73,7 +73,7 @@ function AdminAppointment() {
                   <td>
                     {app.document && app.document.path ? (
                       <a 
-                        href={`http://localhost:8000/uploads/${app.document.path.split(/[/\\]/).pop()}`} 
+                        href={`https://medicare-uz8a.onrender.com/uploads/${app.document.path.split(/[/\\]/).pop()}`} 
                         target="_blank" 
                         rel="noreferrer"
                         style={{ color: "var(--neon-teal)", textDecoration: "none", fontWeight: 500 }}

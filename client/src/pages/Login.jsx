@@ -21,7 +21,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/api/user/login", formData);
+      const response = await axios.post("https://medicare-uz8a.onrender.com/api/user/login", formData);
       if (response.data.success) {
         message.success(response.data.message || "Login successful!");
         localStorage.setItem("token", response.data.token);

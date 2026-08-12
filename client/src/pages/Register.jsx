@@ -24,7 +24,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/api/user/register", formData);
+      const response = await axios.post("https://medicare-uz8a.onrender.com/api/user/register", formData);
       if (response.data.success) {
         message.success(response.data.message || "Registration successful!");
         navigate("/login");

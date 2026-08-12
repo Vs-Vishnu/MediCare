@@ -20,12 +20,12 @@ function AdminHome() {
       const token = localStorage.getItem("token");
       
       // Fetch users
-      const usersRes = await axios.get("http://localhost:8000/api/admin/getallusers", {
+      const usersRes = await axios.get("https://medicare-uz8a.onrender.com/api/admin/getallusers", {
         headers: { Authorization: `Bearer ${token}` }
       });
       
       // Fetch doctors
-      const doctorsRes = await axios.get("http://localhost:8000/api/admin/getalldoctors", {
+      const doctorsRes = await axios.get("https://medicare-uz8a.onrender.com/api/admin/getalldoctors", {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -50,7 +50,7 @@ function AdminHome() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:8000/api/admin/getapprove",
+        "https://medicare-uz8a.onrender.com/api/admin/getapprove",
         { doctorId, userid },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -68,7 +68,7 @@ function AdminHome() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:8000/api/admin/getreject",
+        "https://medicare-uz8a.onrender.com/api/admin/getreject",
         { doctorId, userid },
         { headers: { Authorization: `Bearer ${token}` } }
       );

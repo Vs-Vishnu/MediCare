@@ -38,7 +38,7 @@ function DoctorList({ doctor, userdata, onBookingSuccess }) {
       }
 
       const response = await axios.post(
-        "http://localhost:8000/api/user/getappointment",
+        "https://medicare-uz8a.onrender.com/api/user/getappointment",
         postData,
         {
           headers: {

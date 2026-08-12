@@ -21,7 +21,7 @@ function Notification({ onUpdate }) {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:8000/api/user/getallnotification",
+        "https://medicare-uz8a.onrender.com/api/user/getallnotification",
         {},
         {
           headers: {
@@ -45,7 +45,7 @@ function Notification({ onUpdate }) {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:8000/api/user/deleteallnotification",
+        "https://medicare-uz8a.onrender.com/api/user/deleteallnotification",
         {},
         {
           headers: {

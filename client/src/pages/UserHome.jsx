@@ -38,7 +38,7 @@ function UserHome() {
       const localData = JSON.parse(localStorage.getItem("userData") || "{}");
       
       const response = await axios.post(
-        "http://localhost:8000/api/user/getuserdata",
+        "https://medicare-uz8a.onrender.com/api/user/getuserdata",
         {},
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -72,7 +72,7 @@ function UserHome() {
   const fetchApprovedDoctors = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/api/user/getalldoctorsu", {
+      const response = await axios.get("https://medicare-uz8a.onrender.com/api/user/getalldoctorsu", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -87,7 +87,7 @@ function UserHome() {
   const fetchPatientAppointments = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/api/user/getuserappointments", {
+      const response = await axios.get("https://medicare-uz8a.onrender.com/api/user/getuserappointments", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -102,7 +102,7 @@ function UserHome() {
   const fetchDocAppointments = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/api/doctor/getdoctorappointments", {
+      const response = await axios.get("https://medicare-uz8a.onrender.com/api/doctor/getdoctorappointments", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -118,7 +118,7 @@ function UserHome() {
     try {
       const token = localStorage.getItem("token");
       // Find doctor profile associated with userID
-      const response = await axios.get("http://localhost:8000/api/admin/getalldoctors", {
+      const response = await axios.get("https://medicare-uz8a.onrender.com/api/admin/getalldoctors", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.data.success) {
@@ -137,7 +137,7 @@ function UserHome() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:8000/api/doctor/handlestatus",
+        "https://medicare-uz8a.onrender.com/api/doctor/handlestatus",
         { appointmentId, status },
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -156,7 +156,7 @@ function UserHome() {
   // Doctors: Download uploaded patient document
   const handleDownload = (appointId) => {
     const token = localStorage.getItem("token");
-    window.open(`http://localhost:8000/api/doctor/getdocumentdownload?appointId=${appointId}&Authorization=Bearer ${token}`);
+    window.open(`https://medicare-uz8a.onrender.com/api/doctor/getdocumentdownload?appointId=${appointId}&Authorization=Bearer ${token}`);
   };
 
   // Doctors: Edit profile handler
@@ -172,7 +172,7 @@ function UserHome() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:8000/api/doctor/updateprofile",
+        "https://medicare-uz8a.onrender.com/api/doctor/updateprofile",
         docProfile,
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -337,7 +337,7 @@ function UserHome() {
                           <td>
                             {app.document && app.document.path ? (
                               <a 
-                                href={`http://localhost:8000/uploads/${app.document.path.split(/[/\\]/).pop()}`} 
+                                href={`https://medicare-uz8a.onrender.com/uploads/${app.document.path.split(/[/\\]/).pop()}`} 
                                 target="_blank" 
                                 rel="noreferrer"
                                 style={{ color: "var(--neon-teal)", textDecoration: "none", fontWeight: 500 }}

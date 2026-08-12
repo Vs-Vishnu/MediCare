@@ -45,7 +45,7 @@ function ApplyDoctor({ userdata, onComplete }) {
       };
       
       const response = await axios.post(
-        "http://localhost:8000/api/user/registerdoc",
+        "https://medicare-uz8a.onrender.com/api/user/registerdoc",
         postData,
         {
           headers: {
