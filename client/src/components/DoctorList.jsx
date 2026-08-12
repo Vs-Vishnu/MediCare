@@ -74,18 +74,29 @@ function DoctorList({ doctor, userdata, onBookingSuccess }) {
       <Card className="glass-panel h-100 border-0 p-3">
         <Card.Body className="d-flex flex-column justify-content-between">
           <div>
-            <h4 style={{ fontWeight: 700, color: "white" }}>Dr. {doctor.fullName}</h4>
-            <span 
-              className="px-2 py-1 rounded mb-3 d-inline-block" 
-              style={{ background: "rgba(20,184,166,0.15)", color: "var(--neon-teal)", fontSize: "0.85rem", fontWeight: 600 }}
-            >
-              {doctor.specialization}
-            </span>
+            <div className="d-flex justify-content-between align-items-start">
+              <div>
+                <h4 style={{ fontWeight: 700, color: "white", marginBottom: "4px" }}>Dr. {doctor.fullName}</h4>
+                <span 
+                  className="px-2 py-1 rounded mb-3 d-inline-block" 
+                  style={{ background: "rgba(20,184,166,0.15)", color: "var(--neon-teal)", fontSize: "0.85rem", fontWeight: 600 }}
+                >
+                  {doctor.specialization}
+                </span>
+              </div>
+              <div className="d-flex align-items-center gap-1 text-warning" style={{ fontWeight: 600, fontSize: "0.95rem" }}>
+                <span>★</span>
+                <span>{doctor.rating ? doctor.rating.toFixed(1) : "4.5"}</span>
+              </div>
+            </div>
             <p className="mb-2" style={{ fontSize: "0.9rem" }}>
               <strong style={{ color: "var(--text-muted)" }}>Experience:</strong> {doctor.experience} Years
             </p>
             <p className="mb-2" style={{ fontSize: "0.9rem" }}>
               <strong style={{ color: "var(--text-muted)" }}>Consultation Fee:</strong> ${doctor.fees}
+            </p>
+            <p className="mb-2" style={{ fontSize: "0.9rem" }}>
+              <strong style={{ color: "var(--text-muted)" }}>Location:</strong> 📍 {doctor.location || "New York"}
             </p>
             <p className="mb-2" style={{ fontSize: "0.9rem" }}>
               <strong style={{ color: "var(--text-muted)" }}>Address:</strong> {doctor.address}

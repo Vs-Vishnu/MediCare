@@ -31,6 +31,16 @@ const doctorSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    location: {
+      type: String,
+      required: false,
+      default: "New York",
+    },
+    rating: {
+      type: Number,
+      required: false,
+      default: 4.5,
+    },
     specialization: {
       type: String,
       required: true,
