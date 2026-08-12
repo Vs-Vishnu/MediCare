@@ -4,6 +4,7 @@ MediCare is a state-of-the-art healthcare consultation and appointment booking w
 
 - **Vercel Frontend URL:** [https://medi-care-gamma-five.vercel.app/](https://medi-care-gamma-five.vercel.app/)
 - **Render Backend URL:** [https://medicare-uz8a.onrender.com](https://medicare-uz8a.onrender.com)
+- **Project Documentation:** [Google Drive Folder](https://drive.google.com/drive/folders/1qFC_As63-DG_EbABmRP1sNooiLzamReS?usp=sharing)
 
 ---
 
