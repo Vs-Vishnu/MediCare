@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'antd/dist/reset.css';
+
+:root {
+  --primary-grad: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  --accent-grad: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  --dark-bg: #0b0f19;
+  --card-glass: rgba(17, 24, 39, 0.6);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --neon-teal: #14b8a6;
+  --neon-blue: #0ea5e9;
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-bg);
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(20, 184, 166, 0.1) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(14, 165, 233, 0.12) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: var(--card-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: var(--text-main);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Floating Glass Navbar */
+.glass-nav {
+  background: rgba(11, 15, 25, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+  padding: 15px 0;
+}
+
+.glass-nav .navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #14b8a6, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-nav .nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  margin: 0 10px;
+}
+
+.glass-nav .nav-link:hover, .glass-nav .nav-link.active {
+  color: var(--text-main) !important;
+}
+
+/* Buttons */
+.btn-premium-primary {
+  background: var(--primary-grad);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.3);
+}
+
+.btn-premium-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.4);
+}
+
+.btn-premium-accent {
+  background: var(--accent-grad);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(13, 148, 136, 0.3);
+}
+
+.btn-premium-accent:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(13, 148, 136, 0.4);
+}
+
+/* Inputs and Forms */
+.glass-input {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--neon-teal) !important;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.15) !important;
+  outline: none !important;
+}
+
+/* Ant Design styles integration */
+.ant-form-item-label > label {
+  color: var(--text-main) !important;
+}
+.ant-input, .ant-input-password, .ant-picker {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+.ant-input::placeholder, .ant-picker-input > input::placeholder {
+  color: var(--text-muted) !important;
+}
+.ant-input:focus, .ant-input-focused, .ant-picker-focused {
+  border-color: var(--neon-teal) !important;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2) !important;
+}
+.ant-picker-input > input {
+  color: white !important;
+}
+
+/* Sidebar Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background: rgba(11, 15, 25, 0.95);
+  border-right: 1px solid var(--card-border);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-logo {
+  font-weight: 800;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #14b8a6, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border-left: 4px solid var(--neon-teal);
+  padding-left: 16px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.header-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-user h4 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.notification-badge {
+  position: relative;
+  cursor: pointer;
+}
+
+.badge-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--neon-teal);
+  color: white;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Custom Table Design */
+.premium-table {
+  background: var(--card-glass) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  color: var(--text-main) !important;
+}
+
+.premium-table th {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-muted) !important;
+  font-weight: 600;
+  border-bottom: 1px solid var(--card-border) !important;
+  padding: 16px !important;
+}
+
+.premium-table td {
+  background: transparent !important;
+  color: var(--text-main) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 16px !important;
+  vertical-align: middle;
+}
+
+/* Badges */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.status-approved, .status-scheduled, .status-confirmed {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.status-pending {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.status-rejected {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+/* Hero Section Landing Page */
+.hero-sec {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.hero-img-container {
+  position: relative;
+}
+
+.hero-img-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  z-index: 0;
+}
+
+.hero-img {
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-card {
+  padding: 30px;
+  border-radius: 16px;
+  height: 100%;
+}
+
+.about-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--neon-teal);
+}
+
+.footer {
+  border-top: 1px solid var(--card-border);
+  padding: 30px 0;
+  text-align: center;
+  color: var(--text-muted);
+}
